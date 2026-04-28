@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Kalkulator</title>
+    
+    <!-- PWA Setup -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <meta name="theme-color" content="#D8B4FE">
+    
+    <!-- Standard Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Container for dynamic floating sparkles -->
+    <div id="sparkles-wrapper" class="sparkles-wrapper"></div>
+
+    <main class="calculator-wrapper">
+        <!-- Decorative Header -->
+        <div class="header-decor">
+            <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Left Wing -->
+                <path class="wing-left" d="M45 30 Q25 15 10 25 Q25 35 45 35 Z" fill="#F3E8FF" stroke="#582C83" stroke-width="3"/>
+                <!-- Right Wing -->
+                <path class="wing-right" d="M75 30 Q95 15 110 25 Q95 35 75 35 Z" fill="#F3E8FF" stroke="#582C83" stroke-width="3"/>
+                <!-- Center Heart -->
+                <path d="M60 45 L50 35 Q45 30 50 25 Q55 20 60 28 Q65 20 70 25 Q75 30 70 35 Z" fill="#FBCFE8" stroke="#582C83" stroke-width="3"/>
+            </svg>
+        </div>
+
+        <!-- Calculator Case -->
+        <div class="calculator-case">
+            
+            <!-- Coquette / Y2K corner details -->
+            <span class="corner-detail corner-tl">✨</span>
+            <span class="corner-detail corner-tr">💖</span>
+            <span class="corner-detail corner-bl">🎀</span>
+            <span class="corner-detail corner-br">✨</span>
+
+            <!-- Recessed Screen Display -->
+            <div class="screen-container">
+                <!-- Glare overlay -->
+                <div class="screen-glare"></div>
+                
+                <div id="history" class="history pixel-font"></div>
+                <div id="display" class="display pixel-font scrollbar-hide">0</div>
+            </div>
+
+            <!-- Keypad Area -->
+            <div class="keypad">
+                <!-- Row 1 -->
+                <button class="btn-pixel btn-action tracking-widest" data-action="clear" aria-label="Clear">AC</button>
+                <button class="btn-pixel btn-action tracking-widest" data-action="backspace" aria-label="Backspace">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#582C83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-delete"><path d="M20 5H9l-7 7 7 7h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"/><line x1="18" x2="12" y1="9" y2="15"/><line x1="12" x2="18" y1="9" y2="15"/></svg>
+                </button>
+                <button class="btn-pixel btn-operator" data-action="percent" aria-label="Percentage">%</button>
+                <button class="btn-pixel btn-operator" data-action="operator" data-value="/" aria-label="Divide">÷</button>
+                
+                <!-- Row 2 -->
+                <button class="btn-pixel" data-action="number" data-value="7">7</button>
+                <button class="btn-pixel" data-action="number" data-value="8">8</button>
+                <button class="btn-pixel" data-action="number" data-value="9">9</button>
+                <button class="btn-pixel btn-operator" data-action="operator" data-value="*" aria-label="Multiply">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn-pixel" data-action="number" data-value="4">4</button>
+                <button class="btn-pixel" data-action="number" data-value="5">5</button>
+                <button class="btn-pixel" data-action="number" data-value="6">6</button>
+                <button class="btn-pixel btn-operator" data-action="operator" data-value="-" aria-label="Subtract">-</button>
+
+                <!-- Row 4 -->
+                <button class="btn-pixel" data-action="number" data-value="1">1</button>
+                <button class="btn-pixel" data-action="number" data-value="2">2</button>
+                <button class="btn-pixel" data-action="number" data-value="3">3</button>
+                <button class="btn-pixel btn-operator" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn-pixel col-span-2" data-action="number" data-value="0">0</button>
+                <button class="btn-pixel" data-action="decimal" aria-label="Decimal">.</button>
+                <button class="btn-pixel btn-equals" data-action="calculate" aria-label="Equals">=</button>
+            </div>
+            
+            <!-- Romantic Footer Inside Case -->
+            <div class="footer-text">from 2808 to 3006</div>
+        </div>
+    </main>
+
+    <!-- App Logic -->
+    <script src="script.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

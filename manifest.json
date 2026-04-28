@@ -1,0 +1,28 @@
+{
+  "name": "Cute Y2K Kalkulator",
+  "short_name": "Kalkulator",
+  "description": "Kalkulator imut dengan tema Y2K Coquette Pixel Art",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fbcfe8",
+  "theme_color": "#D8B4FE",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
