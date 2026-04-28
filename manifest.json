@@ -1,6 +1,6 @@
 {
-  "name": "Cute Y2K Kalkulator",
-  "short_name": "Kalkulator",
+  "name": "Cute Kalkulator",
+  "short_name": "Cute Kalkulator",
   "description": "Kalkulator imut dengan tema Y2K Coquette Pixel Art",
   "start_url": "./index.html",
   "display": "standalone",
